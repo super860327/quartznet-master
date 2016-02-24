@@ -5658,12 +5658,6 @@
             valid for submission into a <see cref="T:Quartz.IScheduler" />.
             </summary>
         </member>
-        <member name="T:Quartz.Impl.DefaultThreadExecutor">
-            <summary>
-            Schedules work on a newly spawned thread. This is the default Quartz behavior.
-            </summary>
-            <author>matt.accola</author>
-        </member>
         <member name="T:Quartz.Impl.Calendar.AnnualCalendar">
             <summary>
             This implementation of the Calendar excludes a set of days of the year. You
@@ -7268,27 +7262,6 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="T:Quartz.Impl.StdJobRunShellFactory">
-            <summary> 
-            Responsible for creating the instances of <see cref="T:Quartz.Core.JobRunShell" />
-            to be used within the <see cref="T:Quartz.Core.QuartzScheduler" /> instance.
-            </summary>
-            <author>James House</author>
-            <author>Marko Lahma (.NET)</author>
-        </member>
-        <member name="M:Quartz.Impl.StdJobRunShellFactory.Initialize(Quartz.IScheduler)">
-            <summary>
-            Initialize the factory, providing a handle to the <see cref="T:Quartz.IScheduler" />
-            that should be made available within the <see cref="T:Quartz.Core.JobRunShell" /> and
-            the <see cref="T:Quartz.IJobExecutionContext" /> s within it.
-            </summary>
-        </member>
-        <member name="M:Quartz.Impl.StdJobRunShellFactory.CreateJobRunShell(Quartz.Spi.TriggerFiredBundle)">
-            <summary>
-            Called by the <see cref="T:Quartz.Core.QuartzSchedulerThread" /> to obtain instances of 
-            <see cref="T:Quartz.Core.JobRunShell" />.
-            </summary>
-        </member>
         <member name="T:Quartz.Impl.StdScheduler">
             <summary>
             An implementation of the <see cref="T:Quartz.IScheduler" /> interface that directly
@@ -7845,17 +7818,6 @@
             <summary>
             Returns the fire instance id.
             </summary>
-        </member>
-        <member name="T:Quartz.Impl.SchedulerDetailsSetter">
-            <summary>
-            This utility calls methods reflectively on the given objects even though the
-            methods are likely on a proper interface (ThreadPool, JobStore, etc). The
-            motivation is to be tolerant of older implementations that have not been
-            updated for the changes in the interfaces (eg. LocalTaskExecutorThreadPool in
-            spring quartz helpers)
-            </summary>
-            <author>teck</author>
-            <author>Marko Lahma (.NET)</author>
         </member>
         <member name="T:Quartz.IntervalUnit">
             <summary>
@@ -14822,26 +14784,6 @@
             Returns a client proxy to a remote <see cref="T:Quartz.Simpl.IRemotableQuartzScheduler" />.
             </summary>
         </member>
-        <member name="T:Quartz.Spi.IThreadExecutor">
-             <summary>
-             Allows different strategies for scheduling threads. The <see cref="M:Quartz.Spi.IThreadExecutor.Initialize" />
-             method is required to be called before the first call to
-             <see cref="M:Quartz.Spi.IThreadExecutor.Execute(Quartz.QuartzThread)" />. The Thread containing the work to be performed is
-             passed to execute and the work is scheduled by the underlying implementation.
-            </summary>
-             <author>matt.accola</author> 
-        </member>
-        <member name="M:Quartz.Spi.IThreadExecutor.Execute(Quartz.QuartzThread)">
-            <summary>
-            Submit a task for execution.
-            </summary>
-            <param name="thread">Thread to execute.</param>
-        </member>
-        <member name="M:Quartz.Spi.IThreadExecutor.Initialize">
-            <summary>
-            Initialize any state prior to calling <see cref="M:Quartz.Spi.IThreadExecutor.Execute(Quartz.QuartzThread)" />.
-            </summary>
-        </member>
         <member name="T:Quartz.Spi.IInstanceIdGenerator">
             <summary>
             An IInstanceIdGenerator is responsible for generating the clusterwide unique 
@@ -16276,34 +16218,6 @@
             Creates a deep copy of object by serializing to memory stream.
             </summary>
             <param name="obj"></param>
-        </member>
-        <member name="M:Quartz.Util.ObjectUtils.ConvertValueIfNecessary(System.Type,System.Object)">
-            <summary>
-            Convert the value to the required <see cref="T:System.Type"/> (if necessary from a string).
-            </summary>
-            <param name="newValue">The proposed change value.</param>
-            <param name="requiredType">
-            The <see cref="T:System.Type"/> we must convert to.
-            </param>
-            <returns>The new value, possibly the result of type conversion.</returns>
-        </member>
-        <member name="M:Quartz.Util.ObjectUtils.InstantiateType``1(System.Type)">
-            <summary>
-            Instantiates an instance of the type specified.
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:Quartz.Util.ObjectUtils.SetObjectProperties(System.Object,System.String[],System.Object[])">
-            <summary>
-            Sets the object properties using reflection.
-            </summary>
-        </member>
-        <member name="M:Quartz.Util.ObjectUtils.SetObjectProperties(System.Object,System.Collections.Specialized.NameValueCollection)">
-            <summary>
-            Sets the object properties using reflection.
-            </summary>
-            <param name="obj">The object to set values to.</param>
-            <param name="props">The properties to set to object.</param>
         </member>
         <member name="T:Quartz.Util.PropertiesParser">
             <summary>

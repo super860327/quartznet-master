@@ -34,7 +34,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Core" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -43,6 +48,43 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FokiteCore.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FokiteCoreCustomExpression.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FokiteCoreDefinition.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FokiteCoreFriends.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FokiteCoreGroups.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FokiteCoreInstaller.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FokiteCoreLogin.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FokiteCoreMain.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FokiteCoreSelfInfo.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FokiteCoreSerivce.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FokiteCoreStaticMethod.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FokiteCoreStatusGroup.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FokiteQQEvent.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
